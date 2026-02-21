@@ -17,6 +17,7 @@ cd ~/dotfiles && bash install.sh
 | **tmux** | TPM, tmux-resurrect, tmux-continuum, mouse support |
 | **git** | Editor, default branch, common aliases |
 | **vim** | Line numbers, syntax highlighting, 4-space indent, mouse |
+| **conda** | Miniconda3 |
 | **ai** | nvm, Node.js LTS, claude-code, codex, gemini-cli |
 
 ## After Installation
