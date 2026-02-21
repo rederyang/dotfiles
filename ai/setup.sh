@@ -13,6 +13,4 @@ else
   echo "Claude Code already installed ($(claude --version 2>/dev/null))"
 fi
 
-echo ""
-echo "=== AI Tools Setup Complete ==="
-echo "Note: Run 'claude' to login on first use"
+echo "AI tools setup complete!"
