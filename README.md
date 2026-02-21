@@ -5,7 +5,7 @@ Personal dotfiles.
 ## Quick Start
 
 ```bash
-git clone https://github.com/kdyang/dotfiles.git ~/dotfiles
+git clone https://github.com/rederyang/dotfiles.git ~/dotfiles
 cd ~/dotfiles && bash install.sh
 ```
 
