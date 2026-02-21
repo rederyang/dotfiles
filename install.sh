@@ -29,7 +29,7 @@ symlink() {
   echo "  Linked: $dst → $src"
 }
 
-# ── Step 1: Symlinks (before setup scripts, so nvm can inject into .zshrc) ────
+# ── Step 1: Symlinks ───────────────────────────────────────────────────────────
 echo "--- Symlinking dotfiles ---"
 symlink "$DOTFILES_DIR/zsh/.zshrc"       "$HOME/.zshrc"
 symlink "$DOTFILES_DIR/tmux/.tmux.conf"  "$HOME/.tmux.conf"
@@ -40,23 +40,27 @@ echo ""
 # ── Step 2: Run setup scripts ──────────────────────────────────────────────────
 echo "--- Running setup scripts ---"
 
-echo "[1/4] Zsh"
+echo "[1/6] Zsh"
 bash "$DOTFILES_DIR/zsh/setup.sh"
 echo ""
 
-echo "[2/4] Tmux"
+echo "[2/6] Vim"
+bash "$DOTFILES_DIR/vim/setup.sh"
+echo ""
+
+echo "[3/6] Tmux"
 bash "$DOTFILES_DIR/tmux/setup.sh"
 echo ""
 
-echo "[3/4] Conda"
+echo "[4/6] Conda"
 bash "$DOTFILES_DIR/conda/setup.sh"
 echo ""
 
-echo "[4/5] AI tools"
+echo "[5/6] AI tools"
 bash "$DOTFILES_DIR/ai/setup.sh"
 echo ""
 
-echo "[5/5] Custom"
+echo "[6/6] Custom"
 bash "$DOTFILES_DIR/scripts/others.sh"
 echo ""
 
