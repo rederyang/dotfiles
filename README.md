@@ -23,8 +23,13 @@ cd ~/dotfiles && bash install.sh
 ## After Installation
 
 1. Restart shell: `exec zsh`
-2. Fill in git identity if needed: `vim ~/.gitconfig`
-3. Login to AI tools on first use: `claude` / `codex` / `gemini`
+2. Login to AI tools on first use: `claude` / `codex` / `gemini`
+
+## Verify Installation
+
+```bash
+cd ~/dotfiles && bash verify.sh
+```
 
 ## Customization
 
