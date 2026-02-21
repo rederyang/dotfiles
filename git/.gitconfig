@@ -1,0 +1,18 @@
+[user]
+    name = kdyang
+    email = xzreder@gmail.com
+
+[init]
+    defaultBranch = main
+
+[core]
+    editor = vim
+
+[credential]
+    helper = store
+
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    lg = log --oneline --graph --decorate --all
