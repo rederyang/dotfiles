@@ -5,6 +5,10 @@ Personal dotfiles.
 ## Quick Start
 
 ```bash
+# On a fresh VPS (install prerequisites first)
+sudo apt update && sudo apt install -y git curl
+
+# Clone and install
 git clone https://github.com/rederyang/dotfiles.git ~/dotfiles
 cd ~/dotfiles && bash setup.sh
 ```
