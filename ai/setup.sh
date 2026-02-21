@@ -21,23 +21,15 @@ else
   echo "Claude Code already installed ($(claude --version 2>/dev/null))"
 fi
 
-# Install jq
-if ! command -v jq &>/dev/null; then
-  echo "Installing jq..."
-  sudo apt update && sudo apt install -y jq
-else
-  echo "jq already installed"
-fi
-
 # Merge .claude.json config (theme, editorMode, etc.)
-if [ -f "$HOME/.claude.json" ]; then
-  jq '. * $config' \
-    --argjson config "$(cat "$DOTFILES_DIR/ai/.claude.json")" \
-    "$HOME/.claude.json" > /tmp/.claude.json && mv /tmp/.claude.json "$HOME/.claude.json"
-  echo "  Merged .claude.json config"
-else
-  cp "$DOTFILES_DIR/ai/.claude.json" "$HOME/.claude.json"
-  echo "  Created .claude.json config"
-fi
+"$HOME/miniconda3/bin/python3" - <<EOF
+import json, os
+target = os.path.expanduser("~/.claude.json")
+src = "$DOTFILES_DIR/ai/.claude.json"
+data = json.load(open(target)) if os.path.exists(target) else {}
+data.update(json.load(open(src)))
+json.dump(data, open(target, "w"), indent=2)
+EOF
+echo "  Merged .claude.json config"
 
 echo "AI tools setup complete!"
