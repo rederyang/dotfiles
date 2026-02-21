@@ -27,4 +27,4 @@ cd ~/dotfiles && bash install.sh
 
 ## Customization
 
-Add your own setup steps to `scripts/others.sh`.
+Add your own setup steps to `others/setup.sh`.

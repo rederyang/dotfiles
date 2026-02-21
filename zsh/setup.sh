@@ -1,9 +1,15 @@
 #!/bin/bash
-# Zsh setup script - Install Oh My Zsh and plugins
+# Zsh setup script
 
 set -e
 
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+source "$DOTFILES_DIR/utils.sh"
+
 echo "=== Zsh Setup ==="
+
+# Symlink
+symlink "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
 
 # Install zsh
 if ! command -v zsh &>/dev/null; then
@@ -19,7 +25,7 @@ if [ "$SHELL" != "$(which zsh)" ]; then
   chsh -s "$(which zsh)"
 fi
 
-# Install Oh My Zsh
+# Install Oh My Zsh (KEEP_ZSHRC=yes preserves our symlink)
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "Installing Oh My Zsh..."
   KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
