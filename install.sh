@@ -48,11 +48,15 @@ echo "[2/4] Tmux"
 bash "$DOTFILES_DIR/tmux/setup.sh"
 echo ""
 
-echo "[3/4] AI tools"
+echo "[3/4] Conda"
+bash "$DOTFILES_DIR/conda/setup.sh"
+echo ""
+
+echo "[4/5] AI tools"
 bash "$DOTFILES_DIR/ai/setup.sh"
 echo ""
 
-echo "[4/4] Custom"
+echo "[5/5] Custom"
 bash "$DOTFILES_DIR/scripts/others.sh"
 echo ""
 
