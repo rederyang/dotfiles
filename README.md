@@ -18,18 +18,12 @@ cd ~/dotfiles && bash install.sh
 | **git** | Editor, default branch, common aliases |
 | **vim** | Line numbers, syntax highlighting, 4-space indent, mouse |
 | **conda** | Miniconda3 |
-| **ai** | nvm, Node.js LTS, claude-code, codex, gemini-cli |
+| **ai** | Claude Code |
 
 ## After Installation
 
 1. Restart shell: `exec zsh`
-2. Login to AI tools on first use: `claude` / `codex` / `gemini`
-
-## Verify Installation
-
-```bash
-cd ~/dotfiles && bash verify.sh
-```
+2. Run `verify.sh` to check everything is working
 
 ## Customization
 

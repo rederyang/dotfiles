@@ -97,18 +97,7 @@ echo ""
 
 # ── AI Tools ──────────────────────────────────────────────────────────────────
 echo "--- AI Tools ---"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-
-check_dir "$HOME/.nvm" "nvm installed"
-if command -v node &>/dev/null; then
-  ok "node $(node --version)"
-else
-  fail "node not found"
-fi
 check_cmd claude
-check_cmd codex
-check_cmd gemini
 echo ""
 
 # ── Summary ───────────────────────────────────────────────────────────────────
