@@ -6,7 +6,7 @@ Personal dotfiles.
 
 ```bash
 git clone https://github.com/rederyang/dotfiles.git ~/dotfiles
-cd ~/dotfiles && bash install.sh
+cd ~/dotfiles && bash setup.sh
 ```
 
 ## What Gets Installed
