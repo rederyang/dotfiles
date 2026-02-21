@@ -1,0 +1,1 @@
+- Always remember to activate env (conda, miniconda or pyenv) in a project. If not sure which env to use, first check existing envs and then ask to decide which env to use.
