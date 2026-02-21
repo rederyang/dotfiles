@@ -11,6 +11,7 @@ echo "=== AI Tools Setup ==="
 # Symlink Claude Code config
 mkdir -p "$HOME/.claude"
 symlink "$DOTFILES_DIR/ai/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+symlink "$DOTFILES_DIR/ai/settings.json" "$HOME/.claude/settings.json"
 
 # Install Claude Code (standalone binary)
 if ! command -v claude &>/dev/null; then

@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(*)",
+      "Bash(git:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(mkdir:*)",
+      "Bash(chmod:*)",
+      "Bash(npm:*)",
+      "Bash(brew:*)",
+      "Bash(apt:*)",
+      "Bash(conda:*)",
+      "Bash(docker:*)"
+    ],
+    "deny": [
+      "Bash(git push --force:*)",
+      "Bash(dd:*)",
+      "Bash(mkfs:*)"
+    ],
+    "ask": [
+      "Bash(git push:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(conda install:*)"
+    ]
+  }
+}
