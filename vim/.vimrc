@@ -33,12 +33,12 @@ colorscheme default
 set ruler
 set laststatus=2
 
-" 插入模式
+" 剪切板
+set clipboard=unnamed
+
+" 按键绑定
+set timeoutlen=50
 imap <Esc>b <C-o>b
 imap <Esc>f <C-o>w
 imap <Esc><BS> <C-w>
-
-" 普通模式
-nmap <Esc>b b
-nmap <Esc>f w
-nmap <Esc><BS> db
+imap ÿ <C-w>
