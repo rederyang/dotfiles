@@ -29,3 +29,8 @@ cd ~/dotfiles && bash setup.sh
 ## Customization
 
 Add your own setup steps to `others/setup.sh`.
+
+## Todo
+
+- Add yazi and its config.
+- Add lazygit.
