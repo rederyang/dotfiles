@@ -9,6 +9,7 @@ echo "=== Lazygit Setup ==="
 # Install lazygit
 if ! command -v lazygit &>/dev/null; then
   echo "Installing lazygit..."
+  sudo add-apt-repository -y ppa:lazygit-team/release
   sudo apt update && sudo apt install -y lazygit
 else
   echo "lazygit already installed"

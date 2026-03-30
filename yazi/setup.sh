@@ -17,7 +17,7 @@ symlink "$DOTFILES_DIR/yazi/package.toml" "$YAZI_CONFIG_DIR/package.toml"
 # Install yazi
 if ! command -v yazi &>/dev/null; then
   echo "Installing yazi..."
-  sudo apt update && sudo apt install -y yazi
+  sudo snap install yazi --classic
 else
   echo "yazi already installed"
 fi
