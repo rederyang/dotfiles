@@ -83,6 +83,7 @@ check_cmd vim
 if vim --version 2>/dev/null | grep -q "Vi IMproved"; then
   ok "vim config loads (.vimrc linked)"
 fi
+check_dir "$HOME/.vim/pack/plugins/start/vim-commentary" "vim-commentary installed"
 echo ""
 
 # ── Conda ─────────────────────────────────────────────────────────────────────
@@ -93,6 +94,19 @@ if grep -q "conda initialize" "$HOME/.zshrc" 2>/dev/null; then
 else
   fail "conda init not found in .zshrc"
 fi
+echo ""
+
+# ── Yazi ──────────────────────────────────────────────────────────────────────
+echo "--- Yazi ---"
+check_cmd yazi
+check_symlink "$HOME/.config/yazi/yazi.toml"    "$DOTFILES_DIR/yazi/yazi.toml"
+check_symlink "$HOME/.config/yazi/init.lua"      "$DOTFILES_DIR/yazi/init.lua"
+check_symlink "$HOME/.config/yazi/package.toml"  "$DOTFILES_DIR/yazi/package.toml"
+echo ""
+
+# ── Lazygit ──────────────────────────────────────────────────────────────────
+echo "--- Lazygit ---"
+check_cmd lazygit
 echo ""
 
 # ── AI Tools ──────────────────────────────────────────────────────────────────
