@@ -24,3 +24,5 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=246"
 # Bindkey
 bindkey '\e[H' beginning-of-line
 bindkey '\e[F' end-of-line
+
+export TERM=xterm-256color
