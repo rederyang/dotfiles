@@ -29,7 +29,11 @@ fi
 # Install yazi
 if ! command -v yazi &>/dev/null; then
   echo "Installing yazi..."
-  sudo snap install yazi --classic
+  curl -fsSL https://github.com/sxyazi/yazi/releases/latest/download/yazi-x86_64-unknown-linux-gnu.zip -o /tmp/yazi.zip
+  unzip -o /tmp/yazi.zip -d /tmp/yazi
+  mkdir -p "$HOME/.local/bin"
+  install -m 755 /tmp/yazi/yazi-x86_64-unknown-linux-gnu/yazi "$HOME/.local/bin/yazi"
+  rm -rf /tmp/yazi /tmp/yazi.zip
 else
   echo "yazi already installed"
 fi
