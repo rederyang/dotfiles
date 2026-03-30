@@ -24,5 +24,6 @@
       "Bash(git reset --hard:*)",
       "Bash(conda install:*)"
     ]
-  }
+  },
+  "model": "opus"
 }
