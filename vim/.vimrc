@@ -37,8 +37,6 @@ set laststatus=2
 set clipboard=unnamed
 
 " 按键绑定
-set timeoutlen=50
-imap <Esc>b <C-o>b
-imap <Esc>f <C-o>w
 imap <Esc><BS> <C-w>
 imap ÿ <C-w>
+
