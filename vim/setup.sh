@@ -17,4 +17,14 @@ else
   echo "vim already installed"
 fi
 
+# Install vim-commentary plugin
+COMMENTARY_DIR="$HOME/.vim/pack/plugins/start/vim-commentary"
+if [ -d "$COMMENTARY_DIR" ]; then
+  echo "vim-commentary already installed"
+else
+  echo "Installing vim-commentary..."
+  mkdir -p "$HOME/.vim/pack/plugins/start"
+  git clone https://github.com/tpope/vim-commentary.git "$COMMENTARY_DIR"
+fi
+
 echo "Vim setup complete!"
