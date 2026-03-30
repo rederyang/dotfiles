@@ -32,5 +32,5 @@ Add your own setup steps to `others/setup.sh`.
 
 ## Todo
 
-- [ ] Add yazi and its config.
-- [ ] Add lazygit.
+- [x] Add yazi and its config.
+- [x] Add lazygit.
