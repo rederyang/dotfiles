@@ -25,5 +25,9 @@
       "Bash(conda install:*)"
     ]
   },
-  "model": "opus"
+  "model": "opus",
+  "statusLine": {
+    "type": "command",
+    "command": "bash $HOME/.claude/statusline-command.sh"
+  }
 }
