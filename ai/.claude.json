@@ -1,5 +1,5 @@
 {
   "theme": "dark-ansi",
   "preferredNotifChannel": "notifications_disabled",
-  "editorMode": "vim"
+  "editorMode": "normal"
 }
