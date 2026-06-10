@@ -31,9 +31,9 @@ else
     echo "zoxide already installed"
   fi
 
-  # Install yazi
-  if ! command -v yazi &>/dev/null; then
-    echo "Installing yazi..."
+  # Install yazi and its package manager.
+  if ! command -v yazi &>/dev/null || ! command -v ya &>/dev/null; then
+    echo "Installing yazi and ya..."
     case "$(uname -m)" in
       x86_64)  YAZI_TARGET="yazi-x86_64-unknown-linux-gnu" ;;
       aarch64) YAZI_TARGET="yazi-aarch64-unknown-linux-gnu" ;;
@@ -43,10 +43,23 @@ else
     unzip -o /tmp/yazi.zip -d /tmp/yazi
     mkdir -p "$HOME/.local/bin"
     install -m 755 "/tmp/yazi/${YAZI_TARGET}/yazi" "$HOME/.local/bin/yazi"
+    install -m 755 "/tmp/yazi/${YAZI_TARGET}/ya" "$HOME/.local/bin/ya"
     rm -rf /tmp/yazi /tmp/yazi.zip
   else
-    echo "yazi already installed"
+    echo "yazi and ya already installed"
   fi
 fi
+
+if command -v ya &>/dev/null; then
+  YA_BIN="$(command -v ya)"
+elif [ -x "$HOME/.local/bin/ya" ]; then
+  YA_BIN="$HOME/.local/bin/ya"
+else
+  echo "ya not found; cannot install Yazi plugins"
+  exit 1
+fi
+
+echo "Installing Yazi plugins..."
+"$YA_BIN" pkg install
 
 echo "Yazi setup complete!"

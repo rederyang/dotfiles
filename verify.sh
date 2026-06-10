@@ -99,9 +99,15 @@ echo ""
 # ── Yazi ──────────────────────────────────────────────────────────────────────
 echo "--- Yazi ---"
 check_cmd yazi
+check_cmd ya
 check_symlink "$HOME/.config/yazi/yazi.toml"    "$DOTFILES_DIR/yazi/yazi.toml"
 check_symlink "$HOME/.config/yazi/init.lua"      "$DOTFILES_DIR/yazi/init.lua"
 check_symlink "$HOME/.config/yazi/package.toml"  "$DOTFILES_DIR/yazi/package.toml"
+if [ -f "$HOME/.config/yazi/plugins/git.yazi/main.lua" ]; then
+  ok "git.yazi plugin installed"
+else
+  fail "git.yazi plugin not installed"
+fi
 echo ""
 
 # ── Lazygit ──────────────────────────────────────────────────────────────────
