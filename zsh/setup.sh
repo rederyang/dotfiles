@@ -11,10 +11,10 @@ echo "=== Zsh Setup ==="
 # Symlink
 symlink "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
 
-# Install zsh
+# Install zsh (preinstalled on macOS)
 if ! command -v zsh &>/dev/null; then
   echo "Installing zsh..."
-  sudo apt update && sudo apt install -y zsh
+  pkg_install zsh
 else
   echo "zsh already installed"
 fi

@@ -2,10 +2,22 @@
 
 Personal dotfiles.
 
+Works on both **Linux** (Debian/Ubuntu, via `apt`) and **macOS** (via Homebrew).
+Each module's `setup.sh`/`verify.sh` branches per OS where needed.
+
 ## Quick Start
+
+**Linux:**
 
 ```bash
 sudo apt update && sudo apt install -y git curl
+git clone https://github.com/rederyang/dotfiles.git ~/dotfiles
+cd ~/dotfiles && bash setup.sh
+```
+
+**macOS** (requires [Homebrew](https://brew.sh)):
+
+```bash
 git clone https://github.com/rederyang/dotfiles.git ~/dotfiles
 cd ~/dotfiles && bash setup.sh
 ```

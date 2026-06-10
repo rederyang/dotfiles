@@ -12,7 +12,7 @@ symlink "$DOTFILES_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
 # Install tmux
 if ! command -v tmux &>/dev/null; then
   echo "Installing tmux..."
-  sudo apt update && sudo apt install -y tmux
+  pkg_install tmux
 else
   echo "tmux already installed"
 fi

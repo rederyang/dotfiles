@@ -9,10 +9,10 @@ echo "=== Git Setup ==="
 # Symlink
 symlink "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
 
-# Install git
+# Install git (preinstalled on macOS via Xcode CLT)
 if ! command -v git &>/dev/null; then
   echo "Installing git..."
-  sudo apt update && sudo apt install -y git
+  pkg_install git
 else
   echo "git already installed"
 fi
