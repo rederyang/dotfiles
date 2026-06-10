@@ -20,6 +20,7 @@ cd ~/dotfiles && bash setup.sh
 | **vim** | Line numbers, syntax highlighting, 4-space indent, mouse |
 | **conda** | Miniconda3 |
 | **ai** | Claude Code |
+| **ghostty** | Ghostty terminal + config (macOS only, via Homebrew cask) |
 
 ## After Installation
 

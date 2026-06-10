@@ -114,6 +114,18 @@ echo "--- AI Tools ---"
 check_cmd claude
 echo ""
 
+# ── Ghostty (macOS only) ──────────────────────────────────────────────────────
+if [[ "$(uname)" == "Darwin" ]]; then
+  echo "--- Ghostty ---"
+  check_symlink "$HOME/.config/ghostty/config" "$DOTFILES_DIR/ghostty/config"
+  if [ -d "/Applications/Ghostty.app" ] || command -v ghostty &>/dev/null; then
+    ok "Ghostty installed"
+  else
+    fail "Ghostty not found"
+  fi
+  echo ""
+fi
+
 # ── Summary ───────────────────────────────────────────────────────────────────
 echo "================================"
 echo -e "  ${green}Passed: $PASS${nc}   ${red}Failed: $FAIL${nc}"
