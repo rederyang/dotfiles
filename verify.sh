@@ -112,6 +112,7 @@ echo ""
 # ── AI Tools ──────────────────────────────────────────────────────────────────
 echo "--- AI Tools ---"
 check_cmd claude
+check_cmd codex
 echo ""
 
 # ── Ghostty (macOS only) ──────────────────────────────────────────────────────

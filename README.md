@@ -19,7 +19,7 @@ cd ~/dotfiles && bash setup.sh
 | **git** | Editor, default branch, common aliases |
 | **vim** | Line numbers, syntax highlighting, 4-space indent, mouse |
 | **conda** | Miniconda3 |
-| **ai** | Claude Code |
+| **ai** | Claude Code, Codex |
 | **ghostty** | Ghostty terminal + config (macOS only, via Homebrew cask) |
 
 ## After Installation
