@@ -15,9 +15,14 @@ git clone https://github.com/rederyang/dotfiles.git ~/dotfiles
 cd ~/dotfiles && bash setup.sh
 ```
 
-**macOS** (requires [Homebrew](https://brew.sh)):
+**macOS:**
 
 ```bash
+# Install Homebrew if you don't have it yet
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Apple Silicon: load brew into the current shell (the installer also prints this)
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 git clone https://github.com/rederyang/dotfiles.git ~/dotfiles
 cd ~/dotfiles && bash setup.sh
 ```
