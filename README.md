@@ -3,7 +3,6 @@
 Personal dotfiles.
 
 Works on both **Linux** (Debian/Ubuntu, via `apt`) and **macOS** (via Homebrew).
-Each module's `setup.sh`/`verify.sh` branches per OS where needed.
 
 ## Quick Start
 
@@ -48,7 +47,3 @@ cd ~/dotfiles && bash setup.sh
 
 Add your own setup steps to `others/setup.sh`.
 
-## Todo
-
-- [x] Add yazi and its config.
-- [x] Add lazygit.
