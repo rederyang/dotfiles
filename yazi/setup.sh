@@ -21,7 +21,7 @@ if is_macos; then
 else
   # Linux: companion tools via apt, zoxide + yazi via released binaries
   echo "Installing yazi companion tools..."
-  sudo apt update && sudo apt install -y fd-find ripgrep fzf jq poppler-utils imagemagick
+  sudo apt update && sudo apt install -y fd-find ripgrep fzf jq poppler-utils imagemagick unzip
 
   # Install zoxide
   if ! command -v zoxide &>/dev/null; then
@@ -35,16 +35,20 @@ else
   if ! command -v yazi &>/dev/null || ! command -v ya &>/dev/null; then
     echo "Installing yazi and ya..."
     case "$(uname -m)" in
-      x86_64)  YAZI_TARGET="yazi-x86_64-unknown-linux-gnu" ;;
-      aarch64) YAZI_TARGET="yazi-aarch64-unknown-linux-gnu" ;;
+      x86_64) YAZI_TARGET="yazi-x86_64-unknown-linux-musl" ;;
+      aarch64 | arm64) YAZI_TARGET="yazi-aarch64-unknown-linux-musl" ;;
       *) echo "Unsupported arch: $(uname -m)"; exit 1 ;;
     esac
-    curl -fsSL "https://github.com/sxyazi/yazi/releases/latest/download/${YAZI_TARGET}.zip" -o /tmp/yazi.zip
-    unzip -o /tmp/yazi.zip -d /tmp/yazi
+
+    TMP_DIR="$(mktemp -d)"
+    curl -fsSL "https://github.com/sxyazi/yazi/releases/latest/download/${YAZI_TARGET}.zip" -o "$TMP_DIR/yazi.zip"
+    unzip -o "$TMP_DIR/yazi.zip" -d "$TMP_DIR/yazi"
+
     mkdir -p "$HOME/.local/bin"
-    install -m 755 "/tmp/yazi/${YAZI_TARGET}/yazi" "$HOME/.local/bin/yazi"
-    install -m 755 "/tmp/yazi/${YAZI_TARGET}/ya" "$HOME/.local/bin/ya"
-    rm -rf /tmp/yazi /tmp/yazi.zip
+    install -m 755 "$TMP_DIR/yazi/${YAZI_TARGET}/yazi" "$HOME/.local/bin/yazi"
+    install -m 755 "$TMP_DIR/yazi/${YAZI_TARGET}/ya" "$HOME/.local/bin/ya"
+
+    rm -rf "$TMP_DIR"
   else
     echo "yazi and ya already installed"
   fi
