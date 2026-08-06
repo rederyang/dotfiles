@@ -26,7 +26,7 @@ fi
 # Install Codex (standalone binary, same approach as Claude Code)
 if ! command -v codex &>/dev/null; then
   echo "Installing Codex..."
-  curl -fsSL https://chatgpt.com/codex/install.sh | sh
+  curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh
 else
   echo "Codex already installed ($(codex --version 2>/dev/null))"
 fi
