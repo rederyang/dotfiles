@@ -29,5 +29,7 @@
   "statusLine": {
     "type": "command",
     "command": "bash $HOME/.claude/statusline-command.sh"
-  }
+  },
+  "tui": "fullscreen",
+  "theme": "dark-ansi"
 }
